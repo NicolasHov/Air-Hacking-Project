@@ -1,5 +1,5 @@
 <select name="flights_id">
    <%= @flights.each do |flight| %>
-     <option value="<%= flight.id %>">Vol n° <%= flight.id %></option>
+     <option value="<%= flight.id %>">Vol du  <%= flight.departure_date%></option>
    <% end %>
  </select>
