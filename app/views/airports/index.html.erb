@@ -1,5 +1,5 @@
 <select name="airports_id">
    <%= @airports.each do |airport| %>
-     <option value="<%= airport.id %>">Aéoroport <%= airport.airport_code %></option>
+     <option value="<%= airport.id %>">Aéoroport de <%= airport.airport_code %></option>
    <% end %>
  </select>
