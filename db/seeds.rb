@@ -21,10 +21,10 @@ index = all_airports.length - 1
 
 13.times do
   departure_airport = all_airports[rand(0..index)].id
-  destination_airport = all_airports[rand(1..index)].id
-  next if departure_airport == destination_airport
+  arrival_airport = all_airports[rand(1..index)].id
+  next if departure_airport == arrival_airport
 	  Flight.create(departure_date: rand(7.days).seconds.from_now,
 	  							duration: rand(500),
 	                departure_airport_id: departure_airport,
-	                arrival_airport_id: destination_airport)
+	                arrival_airport_id: arrival_airport)
 end

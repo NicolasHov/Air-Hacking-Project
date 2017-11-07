@@ -1,0 +1,8 @@
+<%= form_tag flights_path, method: :post do %>
+
+<%= select_tag :departure_airport_id, options_for_select(@flights.collect { |flight| [Airport.find(flight.departure_airport_id).airport_code, flight.departure_airport_id] } )%>
+
+
+<%= submit_tag "Go !"%>
+
+<% end %>

@@ -1,5 +1,32 @@
-<select name="flights_id">
-   <%= @flights.each do |flight| %>
-     <option value="<%= flight.id %>">Vol du  <%= flight.departure_date%></option>
-   <% end %>
- </select>
+
+<h1>Flights List</h1>
+
+<table class="table table-dark">
+  <thead>
+
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Departure</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Date</th>
+      <th scope="col">Passenger number</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% i = 1 %>
+    <% @flights.each do |flight| %>
+    <tr>
+      <th scope="row"><%= i %></th>
+      <td><%=Airport.find(flight.departure_airport_id).airport_code%></td>
+      <td><%=Airport.find(flight.arrival_airport_id).airport_code%></td>
+      <td><%=flight.departure_date%></td>
+      <td><center><%=rand(0..150)%></center></td>
+      <td><%= link_to 'Show the comment', flights_path(flight)%></td>
+      <% i = i + 1%>
+    </tr>
+
+  </tbody>
+  <%end%>
+
+</table>
